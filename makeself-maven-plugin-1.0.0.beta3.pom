@@ -30,7 +30,7 @@
 
     <groupId>com.github.hazendaz.maven</groupId>
     <artifactId>makeself-maven-plugin</artifactId>
-    <version>1.0.0.beta2</version>
+    <version>1.0.0.beta4-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>Makeself Maven plugin</name>
@@ -63,7 +63,7 @@
         <site>
             <id>gh-pages</id>
             <name>GitHub Pages</name>
-            <url>git:ssh://git@github.com/hazendaz/makeself-maven-plugin.git?gh-pages#</url>
+            <url>github:https://hazendaz.github.io/makeself-maven-plugin/</url>
         </site>
     </distributionManagement>
 
@@ -123,6 +123,26 @@
                         <exclude>**/*makeself.sh</exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptors>
+                        <descriptor>${project.basedir}/src/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
