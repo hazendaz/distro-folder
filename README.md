@@ -1,3 +1,8 @@
-Distro for jars built outside of normal channels. 
+Alternative Immutable Distribution 
 
-Retired as of 9/4/2025 as no longer have an edge case need.
+See Releases for immutable items.
+
+Current contents
+
+- groovy eclipse 6.2.0 update site as alternative to jfrog
+
